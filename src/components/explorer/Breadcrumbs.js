@@ -29,6 +29,5 @@ Breadcrumbs.propTypes = {
 };
 
 export default Breadcrumbs;
-//onClick={onChange.bind(this, node, path)}
 
 

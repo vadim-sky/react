@@ -114,7 +114,7 @@ class Explorer extends React.Component {
               </div>
             </div>
           </div>
-          <div className="container-fluid">
+          <div className="container">
             <NavPanel />
           </div>
         </div>
