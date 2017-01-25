@@ -2,7 +2,7 @@
  * Created by vadimsky on 23/01/17.
  */
 
-import {Utils} from "../../utils/index";
+import {Utils} from "./utils/index";
 // import * as React from "react";
 //
 // class FilesSystemItem extends React.ClassComponent {

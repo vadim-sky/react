@@ -3,7 +3,7 @@
 import 'babel-polyfill';
 import expect from 'expect';
 import {Utils} from "./index";
-import {FilesData} from "../components/files/Files";
+import {FilesData} from "../MockData";
 
 
 describe('Test Files name compare', () => {
@@ -44,9 +44,9 @@ describe('Test Files name compare', () => {
 
   it('DESC Sort ROOT', () => {
     let res  = FilesData.children.sort((a, b) => Utils.compareFileItems(a,b, 1));
-    res.forEach((node) => {
-      console.log(node.name, " [", node.type, "] \n" );
-    });
+    // res.forEach((node) => {
+    //   console.log(node.name, " [", node.type, "] \n" );
+    // });
     expect(res[0].name).toEqual("dog");
     expect(res[res.length -1].name).toEqual("bear.png");
   });
@@ -77,27 +77,27 @@ describe('Test Files name compare', () => {
 
   it ('Search multiple cat001 file', () => {
     let res = Utils.search("cat001.jpg", FilesData);
-    res.forEach((el) => {
-      console.log(el.node.name, " [", el.node.type, "] -->" , el.path.toString(), "\n" );
-    });
+    // res.forEach((el) => {
+    //   console.log(el.node.name, " [", el.node.type, "] -->" , el.path.toString(), "\n" );
+    // });
     expect(res[0].node.name).toEqual("cat001.jpg");
   });
 
   it ('Search root files', () => {
     let res = Utils.search("horse.png", FilesData);
-    res.forEach((el) => {
-      console.log(el.node.name, " [", el.node.type, "] -->" , el.path.toString(), "\n" );
-    });
+    // res.forEach((el) => {
+    //   console.log(el.node.name, " [", el.node.type, "] -->" , el.path.toString(), "\n" );
+    // });
     expect(res[0].node.name).toEqual("horse.png");
   });
 
   it ('Search Folders with same name', () => {
     let res = Utils.search("images", FilesData);
-    res.forEach((el) => {
-      console.log( '/n');
-      console.log(el.node.name, " [", el.node.type, "] -->" , el.path);
-
-    });
+    // res.forEach((el) => {
+    //   console.log( '/n');
+    //   console.log(el.node.name, " [", el.node.type, "] -->" , el.path);
+    //
+    // });
 
     expect(res.length > 0);
   });

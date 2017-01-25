@@ -27,7 +27,7 @@ const findByName = (array, name) =>{
 };
 
 
-const findInTree = (name, node, path = [], found = []) => {
+const findInTree = (name, node, path = [node], found = []) => {
   if (node.name === name) {
     found.push({node: node, path: path});
   }
@@ -36,16 +36,26 @@ const findInTree = (name, node, path = [], found = []) => {
       found.push({node: child, path: path});
     }
     if (child.type === "folder") {
-      findInTree(name, child, [...path, child.name], found);
+      findInTree(name, child, [...path, child], found);
     }
   });
   return found;
 };
+
+
+const sort = (nodes, direction=0) =>{
+  if (!nodes) {
+    return nodes;
+  }
+  return nodes.sort((a, b) => Utils.compareFileItems(a,b, direction));
+};
+
 
 export const Utils = {
   compareFileItems:  compareFileItems,
   inverter: inverter,
   deleteItem: deleteItem,
   findByName: findByName,
-  search: findInTree
+  search: findInTree,
+  sort: sort
 };

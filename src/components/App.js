@@ -2,12 +2,19 @@
 import React, {PropTypes} from 'react';
 import Header from './common/Header';
 import {connect} from 'react-redux';
+import Explorer from './explorer/Explorer';
+
+import {FilesData} from "../MockData";
+
 
 class App extends React.Component {
-	render() {
+  	render() {
 		return(
 			<div className="container-fluid">
 				<Header loading={this.props.loading}/>
+        <pre>
+					<Explorer folder={FilesData}></Explorer>
+        </pre>
 				{this.props.children}
 			</div>
 		);

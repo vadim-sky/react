@@ -14,7 +14,6 @@ const Header = ({loading}) => {
         <Link to="/about" activeClassName="active">About</Link>
         {loading && <LoadingDots interval={1000} dots={20}/>}
       </nav>
-      <Explorer/>
     </div>
 	);
 };

@@ -52,13 +52,11 @@ function replaceAll(str, find, replace) {
 
 //This would be performed on the server in a real app. Just stubbing in.
 const generateId = (course) => {
-  debugger;
   return replaceAll(course.title, ' ', '-');
 };
 
 class CourseApi {
   static getAllCourses() {
-    debugger;
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(Object.assign([], courses));
@@ -67,7 +65,6 @@ class CourseApi {
   }
 
   static saveCourse(course) {
-    debugger;
     course = Object.assign({}, course); // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
       setTimeout(() => {

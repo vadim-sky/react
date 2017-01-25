@@ -8,20 +8,15 @@ export function loadCoursesSuccess(courses) {
 }
 
 export function createCourseSuccess(course) {
-	debugger;
 	return {type: types.CREATE_COURSE_SUCCESS, course};
 }
 
 export function updateCourseSuccess(course) {
-	debugger;
 	return {type: types.UPDATE_COURSE_SUCCESS, course};
 }
 
 export function loadCourses() {
-	debugger;
 	return function(dispatch) {
-		debugger;
-		dispatch(beginAjaxCall());
 		return courseApi.getAllCourses().then(courses => {
 			dispatch(loadCoursesSuccess(courses));
 		}).catch(error => {
